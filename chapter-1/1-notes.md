@@ -30,3 +30,8 @@ public static void main (String[] parms) {
 - The name of the class must match the name of the file. 
 - Java compiles the program and then executes it as a 2-step process.
 - The [class](HelloWorld.class) file is used when the program is executed.
+
+
+## Loops
+- If a loop may terminate before all the values in the `for` statement are exahsuted, the loop must be written using a `while` statement. Essentially, a loop should have one entry point and one exit point.
+- Therefore using a `break` statement is poor progamming practice.
