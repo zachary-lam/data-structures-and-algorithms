@@ -35,3 +35,10 @@ public static void main (String[] parms) {
 ## Loops
 - If a loop may terminate before all the values in the `for` statement are exahsuted, the loop must be written using a `while` statement. Essentially, a loop should have one entry point and one exit point.
 - Therefore using a `break` statement is poor progamming practice.
+
+
+## Functions
+- In Java, functions = methods. 
+- When a function doesn't return a value, it is considered a "void function".
+- Void functions don't require a return statement.
+- A void method in Java is the same as a Python void function and the same rules apply.
