@@ -221,3 +221,12 @@ Output:
 - [*from*:] will extract characters beginning at and continuing until the end of the string.
 - In Java, **char** stores only <u>**one**</u> character. To store more, you would need to declare a char[] (array).
 - Like Python, Java can extract similarly to slicing, but using `substring`. (*see [`substring`](Strings.java)*)
+
+## Determining Prime Numbers (combining it all together)
+- This program determines the prime numbers that are less than `n`. A number is prime if it does not have any integer divisors > 1, other than itself.
+- This program ties everything together, teaching basic control flow.
+- It also acts as a small algorithm where correctness is easy to verify.
+
+[Python Prime Numbers Program](prime-numbers.py)
+
+[Java Prime Numbers Program](PrimeNumbers.java)
