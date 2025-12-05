@@ -92,8 +92,8 @@ Note: The parameter passed to `remove_element` is the value of the element to be
 
 ## Passing Parameters
 - Python supports keyword parameters, however, Java does not.
-- If a numeric value is passed, the value is modified within the function, but does not replace the original value in the calling function. (*see [`function1`](passing-params.py)*). This also applies to Java.
-- However, if a list is passed and an element within it is modified, the modification is visible in the calling function. (*see [`function2`](passing-params.py)*). This also applies to Java.
+- If a numeric value is passed, the value is modified within the function, but does not replace the original value in the calling function. This also applies to Java. (*see [`function1`](passing-params.py)*)
+- However, if a list is passed and an element within it is modified, the modification is visible in the calling function. This also applies to Java. (*see [`function2`](passing-params.py)*)
 - In Python, if the number of elements in a list is modified in a function, the change is visible in the calling function. For Java, the changes are not visible in the calling method. (*see [`add_element`](PassingParams.java)*)
 - In Java, if the size of an array in the calling method must be modified, the called method must return the modified array and the calling method must assign the modified array to the original array.
 
@@ -135,3 +135,89 @@ Output:
 1 2 3 4 5 200
 1 2 3 4 5 200
 ```
+
+
+## Scope
+- In Python, variables used in a function are <u>**local**</u> to that function. When the function terminates, the variables are destroyed.
+- If a variable in a calling function is required in the called function, the variable should be passed to the called function as a parameter.
+- Python permits variables that are given values in the calling function to be accessed (but not modified) in the called function. However, this is not a standard programming construct.
+- In Java, variables are local to the method in which they are declared.
+- Java does not permit variables declared in one method to be accessed in a called method.
+- In this case, the variable must be passed to the called method if the variable in a calling method is required to be used in said called method.
+
+## Data Types
+- Java is a collection of data types referred to as *primitive* (not objects).
+- Variables in Java are given a specific type, unlike Python which does not require type declaration as they are dynamically typed.
+- Data types in Java are converted using a *cast* mechanism. (*see [cast](DataTypes.java)*)
+
+<table>
+<tr>
+<th>Python</th>
+<th>Java</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>int</td>
+<td></td>
+<td>integer of any size</td>
+</tr>
+
+<tr>
+<td></td>
+<td>byte</td>
+<td>-128 <= integer <= 127</td>
+</tr>
+
+<tr>
+<td></td>
+<td>short</td>
+<td>-32768 <= intenger <= 32767</td>
+</tr>
+
+<tr>
+<td></td>
+<td>int</td>
+<td>-2147483648 <= intenger < 2147483647</td>
+</tr>
+
+<tr>
+<td></td>
+<td>long</td>
+<td>approx. 18 digit integer</td>
+</tr>
+
+<tr>
+<td></td>
+<td>float</td>
+<td>7 digit accuracy</td>
+</tr>
+
+<tr>
+<td>float</td>
+<td>double</td>
+<td>15 digit accuracy</td>
+</tr>
+
+<tr>
+<td>bool</td>
+<td>boolean</td>
+<td>true/false</td>
+</tr>
+
+<tr>
+<td></td>
+<td>char</td>
+<td>one character</td>
+</tr>
+</table>
+
+
+## Strings
+- Strings essentially store a collection of characters.
+- In Python, a subset of strings can be extracted using *slicing*. (*see [slicing](strings.py)*)
+- The notation [*from*, *to*] means beginning with the character from and continuing up to (but not including) are to be extracted.
+- [*from*] will extract only the one character.
+- [*from*:] will extract characters beginning at and continuing until the end of the string.
+- In Java, **char** stores only <u>**one**</u> character. To store more, you would need to declare a char[] (array).
+- Like Python, Java can extract similarly to slicing, but using `substring`. (*see [`substring`](Strings.java)*)
