@@ -87,3 +87,51 @@ public static int[] remove_element(int[] list, int element) {
     }
 }
 ```
+Note: The parameter passed to `remove_element` is the value of the element to be deleted, not the position of the element to be deleted.
+
+
+## Passing Parameters
+- Python supports keyword parameters, however, Java does not.
+- If a numeric value is passed, the value is modified within the function, but does not replace the original value in the calling function. (*see [`function1`](passing-params.py)*). This also applies to Java.
+- However, if a list is passed and an element within it is modified, the modification is visible in the calling function. (*see [`function2`](passing-params.py)*). This also applies to Java.
+- In Python, if the number of elements in a list is modified in a function, the change is visible in the calling function. For Java, the changes are not visible in the calling method. (*see [`add_element`](PassingParams.java)*)
+- In Java, if the size of an array in the calling method must be modified, the called method must return the modified array and the calling method must assign the modified array to the original array.
+
+```
+public static void main(String[] parms) {
+    int[] my_list;
+    my_list = new int[] {1,2,3,4,5};
+    print_list(my_list);
+
+    my_list = add_element(my_list, 200);
+    print_list(my_list);
+}
+
+public static int[] add_element(int[] my_list, int element) {
+    int[] new_list;
+
+    new_list = new int[my_list.length+1];
+    System.arraycopy(my_list, 0, new_list, 0, my_list.length);
+    new_list[new_list.length-1] = element;
+    my_list = new_list;
+    print_list(my_list);
+    return my_list;
+}
+
+public static void print_list(int[] my_list) {
+    int i;
+
+    for(i=0; i < my_list.length; i++) {
+        System.out.print(my_list[i] + " ")
+    }
+    System.out.println();
+
+}
+```
+
+Output:
+```
+1 2 3 4 5
+1 2 3 4 5 200
+1 2 3 4 5 200
+```
